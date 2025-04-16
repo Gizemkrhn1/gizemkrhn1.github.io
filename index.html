@@ -5,49 +5,6 @@
   <title>Film İzleme Rehberi</title>
   <style>
     body {
-      <header>
-  <h1>Film İzleme Rehberi</h1>
-</header>
-
-<section>
-  <h2>Film Ekle</h2>
-  <form id="filmForm">
-    <label for="filmName">Film Adı:</label>
-    <input type="text" id="filmName" required>
-
-    <label for="filmGenre">Türü:</label>
-    <input type="text" id="filmGenre" required>
-
-    <label for="filmDate">Çıkış Tarihi:</label>
-    <input type="date" id="filmDate" required>
-
-    <label for="watched">İzlenme Durumu:</label>
-    <select id="watched">
-      <option value="izlemedim">İzlemedim</option>
-      <option value="izledim">İzledim</option>
-    </select>
-
-    <button type="submit">Film Ekle</button>
-  </form>
-</section>
-
-<section>
-  <h2>Film Listesi</h2>
-  <table id="filmList">
-    <thead>
-      <tr>
-        <th>Film Adı</th>
-        <th>Türü</th>
-        <th>Çıkış Tarihi</th>
-        <th>İzlenme Durumu</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Film listesi burada yer alacak -->
-    </tbody>
-  </table>
-</section>
-
       background-color: #f8c8d2; 
       text-align: center;
       padding: 100px;
@@ -62,7 +19,47 @@
   </style>
 </head>
 <body>
-  <h1>Merhaba! 👋</h1>
-  <p>Bu Gizem'in ilk web sayfası! 🎉</p>
+  <<header>
+    <h1>Film İzleme Rehberi</h1>
+  </header>
+  <section>
+    <h2>Film Ekle</h2>
+    <form id="filmForm">
+      <label for="filmName">Film Adı:</label>
+      <input type="text" id="filmName" required>
+
+      <label for="filmGenre">Türü:</label>
+      <input type="text" id="filmGenre" required>
+
+      <label for="filmDate">Çıkış Tarihi:</label>
+      <input type="date" id="filmDate" required>
+
+      <label for="watched">İzlenme Durumu:</label>
+      <select id="watched">
+        <option value="izlemedim">İzlemedim</option>
+        <option value="izledim">İzledim</option>
+      </select>
+
+      <button type="submit">Film Ekle</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Film Listesi</h2>
+    <table id="filmList">
+      <thead>
+        <tr>
+          <th>Film Adı</th>
+          <th>Türü</th>
+          <th>Çıkış Tarihi</th>
+          <th>İzlenme Durumu</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Film listesi burada yer alacak -->
+      </tbody>
+    </table>
+  </section>
+
 </body>
 </html>
