@@ -150,6 +150,29 @@
       </tbody>
     </table>
   </section>
+  <!-- Firebase SDK - firebase-app.js ve firebase-analytics.js dosyalarını ekliyoruz -->
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAIaHgcDNQ2rTLb1YJ32mUJwCASWDGBffI",
+    authDomain: "film-rehberi.firebaseapp.com",
+    projectId: "film-rehberi",
+    storageBucket: "film-rehberi.firebasestorage.app",
+    messagingSenderId: "635298137027",
+    appId: "1:635298137027:web:b654a847db2bdbbbdab376",
+    measurementId: "G-R94S8D622M"
+  };
+
+  // Firebase'i başlatıyoruz
+  const app = firebase.initializeApp(firebaseConfig);
+  const analytics = firebase.analytics();
+</script>
+
   <script src="script.js"></script>
   <img src="images/p28828_p_v8_ao.jpg" alt="Poster Test" width="200">
 
