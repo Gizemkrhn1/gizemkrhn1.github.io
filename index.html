@@ -7,13 +7,11 @@
 
   <style>
     body {
-  background-color: #f1d0c5;  /* Pudra pembesi */
-  text-align: center;
-  padding: 50px;
-  font-family: 'Roboto', sans-serif;
-}
-
-
+      background-color: #f1d0c5;
+      text-align: center;
+      padding: 50px;
+      font-family: 'Roboto', sans-serif;
+    }
     h1 {
       font-size: 42px;
       color: #6c3b74;
@@ -22,20 +20,17 @@
       letter-spacing: 2px;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     }
-
     h2 {
       font-size: 24px;
       color: #f8a1d1;
       font-family: 'Pacifico', cursive;
       margin-bottom: 15px;
     }
-
     p, label {
       font-size: 18px;
       color: #6c3b74;
       font-family: 'Open Sans', sans-serif;
     }
-
     input[type="text"], input[type="date"], select {
       font-size: 16px;
       padding: 10px;
@@ -46,12 +41,10 @@
       background-color: #fff;
       transition: all 0.3s ease;
     }
-
     input[type="text"]:focus, input[type="date"]:focus, select:focus {
       border-color: #6c3b74;
       box-shadow: 0 0 8px rgba(108, 59, 116, 0.3);
     }
-
     button {
       font-size: 18px;
       padding: 10px 20px;
@@ -62,14 +55,12 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-
     button:hover {
       background-color: #6c3b74;
       border-color: #6c3b74;
       color: #f5a9d8;
       box-shadow: 0 0 10px rgba(108, 59, 116, 0.5);
     }
-
     table {
       width: 80%;
       margin: 20px auto;
@@ -78,24 +69,20 @@
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-
     th, td {
       padding: 15px;
       text-align: left;
       border-bottom: 1px solid #f8a1d1;
     }
-
     th {
       font-size: 18px;
       color: #6c3b74;
       font-weight: bold;
     }
-
     td {
       font-size: 16px;
       color: #555;
     }
-
     td img {
       width: 100px;
       height: auto;
@@ -104,30 +91,32 @@
   </style>
 </head>
 
-
 <body>
   <header>
     <h1>Film İzleme Rehberi</h1>
   </header>
+
   <section>
     <h2>Film Ekle</h2>
     <form id="filmForm">
       <label for="filmName">Film Adı:</label>
-      <input type="text" id="filmName" required>
+      <input type="text" id="filmName" required><br>
 
       <label for="filmGenre">Türü:</label>
-      <input type="text" id="filmGenre" required>
+      <input type="text" id="filmGenre" required><br>
 
       <label for="filmDate">Çıkış Tarihi:</label>
-      <input type="date" id="filmDate" required>
+      <input type="date" id="filmDate" required><br>
 
       <label for="watched">İzlenme Durumu:</label>
       <select id="watched">
         <option value="izlemedim">İzlemedim</option>
         <option value="izledim">İzledim</option>
-      </select>
+      </select><br>
+
       <label for="filmPoster">Poster URL:</label>
-      <input type="text" id="filmPoster" value="images/p28828_p_v8_ao.jpg" required>
+      <input type="text" id="filmPoster" value="images/p28828_p_v8_ao.jpg" required><br>
+
       <button type="submit">Film Ekle</button>
     </form>
   </section>
@@ -142,40 +131,16 @@
           <th>Çıkış Tarihi</th>
           <th>İzlenme Durumu</th>
           <th>Poster</th>
-
+          <th>Sil</th>
         </tr>
       </thead>
       <tbody>
-        <!-- Film listesi burada yer alacak -->
+        <!-- Filmler buraya eklenecek -->
       </tbody>
     </table>
   </section>
-  <!-- Firebase SDK - firebase-app.js ve firebase-analytics.js dosyalarını ekliyoruz -->
-<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-analytics.js"></script>
 
-<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
-
-
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyAIaHgcDNQ2rTLb1YJ32mUJwCASWDGBffI",
-    authDomain: "film-rehberi.firebaseapp.com",
-    projectId: "film-rehberi",
-    storageBucket: "film-rehberi.firebasestorage.app",
-    messagingSenderId: "635298137027",
-    appId: "1:635298137027:web:b654a847db2bdbbbdab376",
-    measurementId: "G-R94S8D622M"
-  };
-
-  // Firebase'i başlatıyoruz
-  const app = firebase.initializeApp(firebaseConfig);
-  const analytics = firebase.analytics();
-</script>
-
-  <script src="script.js"></script>
-  <img src="images/p28828_p_v8_ao.jpg" alt="Poster Test" width="200">
-
-
+  <!-- Sadece script.js dosyasını yüklüyoruz -->
+  <script type="module" src="script.js"></script>
 </body>
 </html>
