@@ -2,145 +2,45 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Film İzleme Rehberi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      background-color: #f1d0c5;
-      text-align: center;
-      padding: 50px;
-      font-family: 'Roboto', sans-serif;
-    }
-    h1 {
-      font-size: 42px;
-      color: #6c3b74;
-      font-family: 'Dancing Script', cursive;
-      margin-bottom: 20px;
-      letter-spacing: 2px;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    h2 {
-      font-size: 24px;
-      color: #f8a1d1;
-      font-family: 'Pacifico', cursive;
-      margin-bottom: 15px;
-    }
-    p, label {
-      font-size: 18px;
-      color: #6c3b74;
-      font-family: 'Open Sans', sans-serif;
-    }
-    input[type="text"], input[type="date"], select {
-      font-size: 16px;
-      padding: 10px;
-      margin: 10px 0;
-      width: 260px;
-      border-radius: 10px;
-      border: 1px solid #f8a1d1;
-      background-color: #fff;
-      transition: all 0.3s ease;
-    }
-    input[type="text"]:focus, input[type="date"]:focus, select:focus {
-      border-color: #6c3b74;
-      box-shadow: 0 0 8px rgba(108, 59, 116, 0.3);
-    }
-    button {
-      font-size: 18px;
-      padding: 10px 20px;
-      background-color: #f5a9d8;
-      color: white;
-      border: 2px solid #f5a9d8;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    button:hover {
-      background-color: #6c3b74;
-      border-color: #6c3b74;
-      color: #f5a9d8;
-      box-shadow: 0 0 10px rgba(108, 59, 116, 0.5);
-    }
-    table {
-      width: 80%;
-      margin: 20px auto;
-      border-collapse: collapse;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    th, td {
-      padding: 15px;
-      text-align: left;
-      border-bottom: 1px solid #f8a1d1;
-    }
-    th {
-      font-size: 18px;
-      color: #6c3b74;
-      font-weight: bold;
-    }
-    td {
-      font-size: 16px;
-      color: #555;
-    }
-    td img {
-      width: 100px;
-      height: auto;
-      border-radius: 10px;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Filmmoloji</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
   <header>
-    <h1>Film İzleme Rehberi</h1>
+    <div class="container">
+      <h1>Filmmoloji</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Ana Sayfa</a></li>
+          <li><a href="#">Film Ekle</a></li>
+          <li><a href="#">Listeler</a></li>
+          <li><a href="#">Öneriler</a></li>
+          <li><a href="#">Hakkında</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section>
-    <h2>Film Ekle</h2>
-    <form id="filmForm">
-      <label for="filmName">Film Adı:</label>
-      <input type="text" id="filmName" required><br>
+  <main>
+    <section class="intro">
+      <h2>Film Tutkunlarının Buluşma Noktası</h2>
+      <p>Sadelik ve şıklık bir arada. Kendi film arşivini oluştur, başkalarının listelerine göz at!</p>
+    </section>
 
-      <label for="filmGenre">Türü:</label>
-      <input type="text" id="filmGenre" required><br>
+    <section class="categories">
+      <div class="category">En Yeni</div>
+      <div class="category">En Beğenilen</div>
+      <div class="category">Klasikler</div>
+      <div class="category">Sürpriz Seçimler</div>
+    </section>
+  </main>
 
-      <label for="filmDate">Çıkış Tarihi:</label>
-      <input type="date" id="filmDate" required><br>
+  <footer>
+    <p>© 2025 Filmmoloji. Tüm hakları saklıdır.</p>
+  </footer>
 
-      <label for="watched">İzlenme Durumu:</label>
-      <select id="watched">
-        <option value="izlemedim">İzlemedim</option>
-        <option value="izledim">İzledim</option>
-      </select><br>
-
-      <label for="filmPoster">Poster URL:</label>
-      <input type="text" id="filmPoster" value="images/p28828_p_v8_ao.jpg" required><br>
-
-      <button type="submit">Film Ekle</button>
-    </form>
-  </section>
-
-  <section>
-    <h2>Film Listesi</h2>
-    <table id="filmList">
-      <thead>
-        <tr>
-          <th>Film Adı</th>
-          <th>Türü</th>
-          <th>Çıkış Tarihi</th>
-          <th>İzlenme Durumu</th>
-          <th>Poster</th>
-          <th>Sil</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Filmler buraya eklenecek -->
-      </tbody>
-    </table>
-  </section>
-
-  <!-- Sadece script.js dosyasını yüklüyoruz -->
-  <script type="module" src="script.js"></script>
 </body>
 </html>
