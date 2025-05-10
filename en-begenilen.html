@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>En Beğenilen Filmler - Filmmoloji</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .film-listesi {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .film-karti {
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .film-karti img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .film-karti h3 {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .film-karti p {
+      font-size: 14px;
+      color: #555;
+      margin: 4px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Filmmoloji</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="film_ekle.html">Film Ekle</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h2 style="text-align: center; margin-top: 20px;">En Beğenilen Filmler</h2>
+
+    <div class="film-listesi">
+      <div class="film-karti">
+        <img src="https://upload.wikimedia.org/wikipedia/tr/a/a3/Harry_Potter_ve_Felsefe_Taşı_film_afişi.jpg" alt="Harry Potter">
+        <h3>Harry Potter</h3>
+        <p><strong>Tür:</strong> Fantastik</p>
+        <p><strong>Yıl:</strong> 2001</p>
+        <p><strong>IMDb:</strong> 7.6</p>
+      </div>
+
+      <div class="film-karti">
+        <img src="https://upload.wikimedia.org/wikipedia/tr/8/87/Y%C3%BCz%C3%BCklerin_Efendisi_Y%C3%BCz%C3%BCk_Karde%C5%9Fli%C4%9Fi.jpg" alt="LOTR">
+        <h3>Lord of the Rings</h3>
+        <p><strong>Tür:</strong> Fantastik</p>
+        <p><strong>Yıl:</strong> 2001</p>
+        <p><strong>IMDb:</strong> 8.8</p>
+      </div>
+
+      <div class="film-karti">
+        <img src="https://upload.wikimedia.org/wikipedia/tr/7/7a/Inception_%28film%29_poster.jpg" alt="Inception">
+        <h3>Inception</h3>
+        <p><strong>Tür:</strong> Bilim Kurgu</p>
+        <p><strong>Yıl:</strong> 2010</p>
+        <p><strong>IMDb:</strong> 8.8</p>
+      </div>
+
+      <div class="film-karti">
+        <img src="https://upload.wikimedia.org/wikipedia/tr/c/c1/The_Matrix_Poster.jpg" alt="Matrix">
+        <h3>Matrix</h3>
+        <p><strong>Tür:</strong> Aksiyon</p>
+        <p><strong>Yıl:</strong> 1999</p>
+        <p><strong>IMDb:</strong> 8.7</p>
+      </div>
+
+      <div class="film-karti">
+        <img src="https://upload.wikimedia.org/wikipedia/tr/2/2c/Godfather_turkce.jpg" alt="Godfather">
+        <h3>The Godfather</h3>
+        <p><strong>Tür:</strong> Suç</p>
+        <p><strong>Yıl:</strong> 1972</p>
+        <p><strong>IMDb:</strong> 9.2</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p style="text-align: center;">© 2025 Filmmoloji. Tüm hakları saklıdır.</p>
+  </footer>
+
+</body>
+</html>
