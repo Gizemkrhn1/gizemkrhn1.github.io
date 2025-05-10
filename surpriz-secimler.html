@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sürpriz Seçimler</title>
+  <link rel="stylesheet" href="surpriz.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>🎲 Sürpriz Seçimler</h1>
+    <nav>
+      <a href="index.html">Anasayfa</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Bugün Ne İzlesem?</h2>
+      <p>
+        Film seçmek bazen zor olabilir… <br>
+        Bu yüzden senin için rastgele ama dopdolu bir film listesi hazırladık. <br>
+        Hemen “Bana Bir Film Öner!” butonuna tıkla ve sürprizin tadını çıkar!
+      </p>
+      <button onclick="rastgeleFilm()">🎬 Bana Bir Film Öner!</button>
+    </section>
+
+    <div id="filmKarti" class="film-card" style="display: none;">
+      <h3 id="filmIsim"></h3>
+      <p id="filmAciklama"></p>
+      <span id="filmSüre"></span><br>
+      <span id="filmTarih"></span>
+    </div>
+  </main>
+
+  <script>
+    const filmler = [
+      {
+        isim: "Her",
+        aciklama: "Yalnız bir adamın yapay zekâ ile kurduğu sıra dışı ilişki, duyguların sınırlarını zorluyor.",
+        süre: "126 dk",
+        tarih: "Vizyon: 2014"
+      },
+      {
+        isim: "Ex Machina",
+        aciklama: "Bir yazılımcı, yapay zekâ testi için çağrıldığı villada insanlığın doğasını sorgulamaya başlar.",
+        süre: "108 dk",
+        tarih: "Vizyon: 2015"
+      },
+      {
+        isim: "Amélie",
+        aciklama: "Hayatın küçük mucizelerine inanan Amélie, çevresindekilerin hayatlarını güzelleştirmeye çalışır.",
+        süre: "122 dk",
+        tarih: "Vizyon: 2001"
+      },
+      {
+        isim: "The Truman Show",
+        aciklama: "Truman, hayatının aslında dev bir televizyon şovu olduğunu fark ettiğinde gerçeklik yıkılır.",
+        süre: "103 dk",
+        tarih: "Vizyon: 1998"
+      },
+      {
+        isim: "500 Days of Summer",
+        aciklama: "Bir aşk hikayesi değil; aşkın ne olmadığını anlatan duygusal ve yaratıcı bir film.",
+        süre: "95 dk",
+        tarih: "Vizyon: 2009"
+      }
+    ];
+
+    function rastgeleFilm() {
+      const film = filmler[Math.floor(Math.random() * filmler.length)];
+      document.getElementById("filmIsim").textContent = film.isim;
+      document.getElementById("filmAciklama").textContent = film.aciklama;
+      document.getElementById("filmSüre").textContent = "Süre: " + film.süre;
+      document.getElementById("filmTarih").textContent = film.tarih;
+      document.getElementById("filmKarti").style.display = "block";
+    }
+  </script>
+</body>
+</html>
