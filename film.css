@@ -1,0 +1,97 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #1f1f1f;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  color: #e50914;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #e50914;
+}
+
+.form-section {
+  padding: 40px 20px;
+}
+
+.form-section .container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.form-title {
+  text-align: center;
+  color: #e50914;
+  margin-bottom: 20px;
+}
+
+.film-form label {
+  margin-top: 10px;
+  font-weight: 600;
+  display: block;
+}
+
+.film-form input,
+.film-form textarea {
+  padding: 12px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #2a2a2a;
+  color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.film-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.film-form button:hover {
+  background-color: #b1070c;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1f1f1f;
+  color: #888;
+  margin-top: 40px;
+}
