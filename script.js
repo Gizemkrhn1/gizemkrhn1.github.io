@@ -1,94 +1,83 @@
-document.addEventListener("DOMContentLoaded", function () {
+const filmForm = document.getElementById('film-form');
 
-  // Film ekleme formu
-  const filmForm = document.getElementById('film-form');
+filmForm.addEventListener('submit', function (event) {
+  event.preventDefault();
 
-  filmForm.addEventListener('submit', function (event) {
-    event.preventDefault(); // Sayfanın yenilenmesini engeller
+  const filmAd = document.getElementById('film-ad').value;
+  const filmTur = document.getElementById('film-tur').value;
+  const filmTarih = document.getElementById('film-tarih').value;
+  const filmAciklama = document.getElementById('film-aciklama').value;
+  const filmPosterFile = document.getElementById('film-poster').files[0];
 
-    // Formdan alınan veriler
-    const filmAd = document.getElementById('film-ad').value;
-    const filmTur = document.getElementById('film-tur').value;
-    const filmTarih = document.getElementById('film-tarih').value;
-    const filmAciklama = document.getElementById('film-aciklama').value;
-    const filmPoster = document.getElementById('film-poster').files[0]; // Poster dosyasını al
+  if (filmPosterFile) {
+    const reader = new FileReader();
+    reader.onloadend = function () {
+      const posterURL = reader.result;
 
-    // FileReader kullanarak poster resmini base64 formatında oku
-    let posterURL = '';
-    if (filmPoster) {
-      const reader = new FileReader();
-      reader.onloadend = function () {
-        posterURL = reader.result;
-        addFilmToLocalStorage();
-      };
-      reader.readAsDataURL(filmPoster);
-    } else {
-      addFilmToLocalStorage(); // Poster yoksa filmi ekle
-    }
+      addFilmToLocalStorage(posterURL);
+    };
+    reader.readAsDataURL(filmPosterFile);
+  } else {
+    addFilmToLocalStorage('');
+  }
 
-    // LocalStorage'a film ekleme işlemi
-    function addFilmToLocalStorage() {
-      const yeniFilm = {
-        ad: filmAd,
-        tur: filmTur,
-        tarih: filmTarih,
-        aciklama: filmAciklama,
-        poster: posterURL
-      };
+  function addFilmToLocalStorage(posterURL) {
+    const yeniFilm = {
+      ad: filmAd,
+      tur: filmTur,
+      tarih: filmTarih,
+      aciklama: filmAciklama,
+      poster: posterURL || 'default.jpg'
+    };
 
-      let filmler = JSON.parse(localStorage.getItem('filmler')) || [];
-      filmler.push(yeniFilm);
-      localStorage.setItem('filmler', JSON.stringify(filmler));
+    let filmler = JSON.parse(localStorage.getItem('filmler')) || [];
+    filmler.push(yeniFilm);
+    localStorage.setItem('filmler', JSON.stringify(filmler));
 
-      filmForm.reset();
-      alert('Film başarıyla eklendi!');
-      listeleFilmleri(); // Filmi listele
-    }
+    filmForm.reset();
+    alert('Film başarıyla eklendi!');
+    listeleFilmleri();
+  }
+});
+
+// Film listeleme fonksiyonu
+const filmListesiDiv = document.getElementById('film-listesi');
+
+function listeleFilmleri() {
+  const filmler = JSON.parse(localStorage.getItem('filmler')) || [];
+  filmListesiDiv.innerHTML = '';
+
+  filmler.forEach((film, index) => {
+    const filmDiv = document.createElement('div');
+    filmDiv.classList.add('film');
+
+    filmDiv.innerHTML = `
+      <h3>${film.ad}</h3>
+      <p><strong>Tür:</strong> ${film.tur}</p>
+      <p><strong>Yayın Tarihi:</strong> ${film.tarih}</p>
+      <p><strong>Açıklama:</strong> ${film.aciklama}</p>
+      <img src="${film.poster}" alt="${film.ad}" class="film-poster">
+      <button class="sil-buton" data-index="${index}">Sil</button>
+    `;
+
+    filmListesiDiv.appendChild(filmDiv);
   });
 
-  // Film listesini sayfada görüntüle
-  const filmListesiDiv = document.getElementById('film-listesi');
-  
-  function listeleFilmleri() {
-    const filmler = JSON.parse(localStorage.getItem('filmler')) || [];
-    filmListesiDiv.innerHTML = ''; // Önceki listeleri temizle
-    
-    filmler.forEach((film, index) => {
-      const filmDiv = document.createElement('div');
-      filmDiv.classList.add('film');
-      
-      filmDiv.innerHTML = `
-        <h3>${film.ad}</h3>
-        <p><strong>Tür:</strong> ${film.tur}</p>
-        <p><strong>Yayın Tarihi:</strong> ${film.tarih}</p>
-        <p><strong>Açıklama:</strong> ${film.aciklama}</p>
-        <img src="${film.poster}" alt="${film.ad}" class="film-poster">
-        <button class="sil-buton" data-index="${index}">Sil</button>
-      `;
-
-      filmListesiDiv.appendChild(filmDiv);
+  const silButonlari = document.querySelectorAll('.sil-buton');
+  silButonlari.forEach(buton => {
+    buton.addEventListener('click', function () {
+      const index = this.getAttribute('data-index');
+      silFilm(index);
     });
+  });
+}
 
-    // Silme butonlarına tıklama olayı ekle
-    const silButonlari = document.querySelectorAll('.sil-buton');
-    silButonlari.forEach(buton => {
-      buton.addEventListener('click', function () {
-        const index = this.getAttribute('data-index');
-        silFilm(index);
-      });
-    });
-  }
-
-  // Film silme işlemi
-  function silFilm(index) {
-    let filmler = JSON.parse(localStorage.getItem('filmler')) || [];
-    filmler.splice(index, 1); // Belirtilen index'teki filmi sil
-    localStorage.setItem('filmler', JSON.stringify(filmler));
-    listeleFilmleri(); // Listeleri tekrar güncelle
-    alert('Film başarıyla silindi!');
-  }
-
-  // Sayfa yüklendiğinde filmleri listele
+function silFilm(index) {
+  let filmler = JSON.parse(localStorage.getItem('filmler')) || [];
+  filmler.splice(index, 1);
+  localStorage.setItem('filmler', JSON.stringify(filmler));
   listeleFilmleri();
+  alert('Film başarıyla silindi!');
+}
 
-});
+listeleFilmleri();

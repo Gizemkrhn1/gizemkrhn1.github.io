@@ -1,0 +1,183 @@
+/* Genel Ayarlar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  color: #fff; /* Beyaz yazı rengi */
+}
+
+.film-item h3 {
+  color: #e50914; /* Başlık rengi kırmızı */
+}
+
+.film-item p {
+  color: #bbb; /* Açık gri açıklama metni */
+}
+
+
+/* Header */
+header {
+  background-color: #111; /* Koyu header */
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Şık gölge */
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #e50914; /* Netflix kırmızı */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff; /* Beyaz yazı */
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+  color: #e50914; /* Kırmızı renk hoverda */
+}
+
+/* Film Bölümü */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #e50914; /* Başlıkta kırmızı */
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.film-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.film-item {
+  background-color: #333; /* Koyu film kartı */
+  padding: 20px;
+  border-radius: 8px;
+  width: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+  color: #fff; /* Beyaz metin */
+  text-align: center;
+}
+
+.film-item h3 {
+  font-size: 2rem;
+  color: #e50914; /* Kırmızı başlık */
+  margin-bottom: 10px;
+}
+
+.film-item p {
+  font-size: 1.1rem;
+  color: #bbb; /* Açık gri açıklamalar */
+  margin-bottom: 10px;
+}
+
+.film-item button {
+  padding: 10px 20px;
+  background-color: #e50914; /* Buton kırmızı */
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.film-item button:hover {
+  background-color: #f40612; /* Daha koyu kırmızı hoverda */
+}
+
+/* Yorumlar Bölümü */
+.comment-section {
+  margin-top: 40px;
+  background-color: #222; /* Yorum kısmı koyu arka plan */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.comment-section h3 {
+  font-size: 2rem;
+  color: #e50914; /* Yorum başlığı kırmızı */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.comments {
+  margin-bottom: 20px;
+}
+
+.comment {
+  background-color: #333; /* Koyu yorum kartı */
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  color: #fff; /* Beyaz metin */
+}
+
+.comment p {
+  font-size: 1rem;
+  color: #bbb; /* Açık gri yorum metni */
+}
+
+form {
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #333; /* Koyu arka plan */
+  border: 1px solid #555; /* Border rengi */
+  color: #fff; /* Beyaz yazı */
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #e50914; /* Kırmızı buton */
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button[type="submit"]:hover {
+  background-color: #f40612; /* Koyu kırmızı hoverda */
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  padding: 20px;
+  text-align: center;
+  color: #777; /* Footerda gri metin */
+}

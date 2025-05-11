@@ -6,7 +6,6 @@
   <title>Film Ekle - Filmmoloji</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="film.css">
-
 </head>
 <body>
 
@@ -42,11 +41,14 @@
           <label for="film-aciklama">Açıklama:</label>
           <textarea id="film-aciklama" rows="4" placeholder="Kısa bir özet..." required></textarea>
 
-          <label for="film-poster">Film Posteri (URL):</label>
-          <input type="url" id="film-poster" placeholder="https://..." required>
+          <label for="film-poster">Film Posteri (Dosya):</label>
+          <input type="file" id="film-poster" accept="image/*" required>
 
           <button type="submit">🎬 Ekle</button>
         </form>
+
+        <div id="film-listesi" class="film-listesi"></div>
+
       </div>
     </section>
   </main>
@@ -55,6 +57,6 @@
     <p>© 2025 Filmmoloji. Tüm hakları saklıdır.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>
