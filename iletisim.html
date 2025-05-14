@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim | Filmmoloji</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="iletisim.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <h1>Filmmoloji - İletişim</h1>
+    <nav>
+      <ul>
+ <li><a href="index.html">Ana Sayfa</a></li>
+    <li><a href="kesfet.html">Keşfet</a></li>
+    <li><a href="oneriler.html">Öneriler</a></li>
+    <li><a href="hakkinda.html">Hakkında</a></li>
+    <li><a href="iletisim.html">İletişim</a></li>
+    <li><a href="kayit-giris.html">Kayıt / Giriş</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="iletisim-container">
+      
+      <!-- İletişim Bilgileri -->
+      <div class="iletisim-bilgileri">
+        <h2>İletişim Bilgilerimiz</h2>
+        <p><strong>Email:</strong> info@filmmoloji.com</p>
+        <p><strong>Telefon:</strong> +90 123 456 78 90</p>
+        <p><strong>Adres:</strong> İstanbul, Türkiye</p>
+
+        <div class="sosyal">
+          <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- İletişim Formu -->
+      <div class="iletisim-formu">
+        <h2>Bize Ulaşın</h2>
+
+        <form class="form" onsubmit="formGonderildi(event)">
+          <label for="isim">Adınız</label>
+          <input type="text" id="isim" required>
+
+          <label for="email">E-posta</label>
+          <input type="email" id="email" required>
+
+          <label for="mesaj">Mesajınız</label>
+          <textarea id="mesaj" rows="4" required></textarea>
+
+          <button type="submit">Gönder</button>
+        </form>
+
+        <div id="gonderildiMesaji" class="gizli">📩 Mesajınız başarıyla gönderildi!</div>
+      </div>
+      
+    </div>
+  </main>
+
+  <footer id="footer-container">
+    <p>© 2025 Filmmoloji. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <script>
+    function formGonderildi(event) {
+      event.preventDefault(); // Sayfa yenilenmesin
+      document.getElementById("gonderildiMesaji").classList.remove("gizli");
+
+      // 3 saniye sonra mesajı tekrar gizle
+      setTimeout(() => {
+        document.getElementById("gonderildiMesaji").classList.add("gizli");
+      }, 3000);
+
+      // Formu temizle (isteğe bağlı)
+      event.target.reset();
+    }
+  </script>
+
+</body>
+</html>

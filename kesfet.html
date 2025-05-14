@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Filmoloji - Keşfet</title>
+  <link rel="stylesheet" href="kesfet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>Filmoloji</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="kesfet.html">Keşfet</a></li>
+        <li><a href="oneriler.html">Öneriler</a></li>
+        <li><a href="hakkinda.html">Hakkında</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+        <li><a href="kayit.html">Kayıt / Giriş</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <p class="page-description">
+30 film, sınırsız heyecan. Filmleri filtrele, aradığın etkiyi yakala!    </p>
+
+    <div class="filter-container">
+      <label for="sort-select">Filtrele:</label>
+      <select id="sort-select">
+        <option value="newest">En Yeni</option>
+        <option value="most-liked">En Beğenilen</option>
+        <option value="most-commented">En Çok Yorumlanan</option>
+      </select>
+    </div>
+
+    <div class="film-list" id="film-list">
+      <!-- Filmler JS ile buraya gelecek -->
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Filmoloji - Tüm Hakları Saklıdır.
+  </footer>
+
+  <script src="kesfet.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kayıt / Giriş Yap</title>
+  <link rel="stylesheet" href="kayit-giris.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+
+  
+</head>
+<body>
+  <header>
+    <h1>🎬 Filmmoloji</h1>
+    <nav>
+  <a href="index.html">Anasayfa</a>
+  <a href="kesfet.html">Keşfet</a>
+<a href="oneriler.html">Öneriler</a></li>
+  <a href="hakkinda.html">Hakkında</a>
+  <a href="iletisim.html">İletişim</a>
+  <a class="active" href="kayit-giris.html">Kayıt / Giriş</a>
+</nav>
+
+  </header>
+
+  <main class="form-container">
+    <!-- Kayıt Formu -->
+    <div class="form-box">
+      <h2>Üye Ol</h2>
+      <form id="kayitForm">
+        <input type="text" id="ad" placeholder="Ad Soyad" required>
+        <input type="email" id="email" placeholder="E-posta" required>
+        <input type="password" id="sifre" placeholder="Şifre" required>
+        <button type="submit">Kayıt Ol</button>
+      </form>
+      <div id="kayitMessage" class="message"></div>
+    </div>
+
+    <!-- Giriş Formu -->
+    <div class="form-box">
+      <h2>Giriş Yap</h2>
+      <form id="girisForm">
+        <input type="email" id="girisEmail" placeholder="E-posta" required>
+        <input type="password" id="girisSifre" placeholder="Şifre" required>
+        <button type="submit">Giriş</button>
+      </form>
+      <div id="girisMessage" class="message"></div>
+    </div>
+  </main>
+
+  <script src="kayit-giris.js"></script>
+</body>
+</html>
