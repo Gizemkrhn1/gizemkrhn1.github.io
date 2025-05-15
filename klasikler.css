@@ -17,11 +17,21 @@ header h1 {
   font-size: 2rem;
 }
 
-nav a {
-  color: #e50914;
-  text-decoration: none;
+nav {
   margin-top: 10px;
+}
+
+nav a {
+  color: white;             /* Beyaz yaptım */
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  font-size: 1rem;
   display: inline-block;
+}
+
+nav a:hover {
+  color: #e50914;           /* Hover'da kırmızı */
 }
 
 main {

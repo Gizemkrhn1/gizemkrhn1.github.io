@@ -22,14 +22,14 @@ header h1 {
 nav {
   display: flex;
   justify-content: center;
-  gap: 30px; /* Menü elemanları arasındaki boşluk */
-  flex-wrap: wrap; /* Küçük ekranda alt satıra geçiş için */
+  gap: 30px;
+  flex-wrap: wrap;
   margin-top: 10px;
 }
 
 nav a {
-  white-space: nowrap; /* Metinler satır kırmasın */
-  color: #fff !important; /* Maviye karşı zorla baskın olur */
+  white-space: nowrap;
+  color: #fff !important;
   text-decoration: none;
   font-weight: 600;
   margin: 0 15px;
@@ -38,16 +38,14 @@ nav a {
 
 nav a:hover,
 nav a.active {
-  color: #e50914 !important; /* Aktif veya üstüne gelince kırmızı */
+  color: #e50914 !important;
 }
 
-/* Form container */
+
 .form-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   padding: 40px 20px;
-  gap: 40px;
 }
 
 /* Form kutuları */
@@ -55,7 +53,7 @@ nav a.active {
   background-color: #1e1e1e;
   padding: 30px;
   border-radius: 10px;
-  width: 300px;
+  width: 320px;
   box-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
 }
 
@@ -91,9 +89,32 @@ nav a.active {
   background-color: #b0060f;
 }
 
+/* Gizleme için */
+.hidden {
+  display: none;
+}
+
+/* Altındaki geçiş linki */
+.toggle-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #ccc;
+  text-align: center;
+}
+
+.toggle-text a {
+  color: #e50914;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.toggle-text a:hover {
+  text-decoration: underline;
+}
+
+/* Mesaj kutusu */
 .message {
   margin-top: 10px;
   color: #00ff88;
   font-size: 14px;
 }
-
